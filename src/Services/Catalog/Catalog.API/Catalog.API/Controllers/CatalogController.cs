@@ -61,7 +61,7 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet]
-        [Route("items/{id:int")]
+        [Route("items/{id:int}")]
         [ProducesResponseType((int)HttpStatusCode.NotFound)]
         [ProducesResponseType(typeof(CatalogItem), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> GetItemById(int id)
@@ -109,7 +109,7 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet]
-        [Route("[action]/type/{catalogtypeid}/brand/{catalogBrandId:int?")]
+        [Route("[action]/type/{catalogtypeid}/brand/{catalogBrandId:int?}")]
         [ProducesResponseType(typeof(PaginatedItemsViewModel<CatalogItem>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Items(int catalogTypeId, int? catalogBrandId, [FromQuery]int pageSize=10, [FromQuery]int pageIndex=0)
         {
@@ -137,7 +137,7 @@ namespace Catalog.API.Controllers
         }
 
         [HttpGet]
-        [Route("[action]/type/all/brand/{catalogBrandId:int?")]
+        [Route("[action]/type/all/brand/{catalogBrandId:int?}")]
         [ProducesResponseType(typeof(PaginatedItemsViewModel<CatalogItem>), (int)HttpStatusCode.OK)]
         public async Task<IActionResult> Items(int? catalogBrandId, [FromQuery]int pageSize=10, [FromQuery]int pageIndex=0)
         {
